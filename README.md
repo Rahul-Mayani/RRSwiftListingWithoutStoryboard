@@ -37,5 +37,5 @@ We would love you for the contribution to **RRSwiftListingWithoutStoryboard**, c
 
 ## License
 
-[RRSwiftListingWithoutStoryboard](https://github.com/Rahul-Mayani/RRSwiftListingWithoutStoryboard/tree/master/RRSwiftListingWithoutStoryboard/RRSwiftListingWithoutStoryboard) is available under the MIT license. See the [LICENSE](https://github.com/Rahul-Mayani/RRSwiftListingWithoutStoryboard/blob/master/LICENSE) file for more info.
+[RRSwiftListingWithoutStoryboard](https://github.com/Rahul-Mayani/RRSwiftListingWithoutStoryboard/tree/master/RRSwiftListingWithoutStoryboard/) is available under the MIT license. See the [LICENSE](https://github.com/Rahul-Mayani/RRSwiftListingWithoutStoryboard/blob/master/LICENSE) file for more info.
 
