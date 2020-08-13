@@ -1,0 +1,5 @@
+#import <Foundation/Foundation.h>
+@interface PodsDummy_Pods_RRSwiftListingWithoutStoryboard_RRSwiftListingWithoutStoryboardUITests : NSObject
+@end
+@implementation PodsDummy_Pods_RRSwiftListingWithoutStoryboard_RRSwiftListingWithoutStoryboardUITests
+@end
