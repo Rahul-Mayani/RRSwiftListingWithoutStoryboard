@@ -29,6 +29,8 @@ open class BaseVC: UIViewController {
         modalPresentationStyle = .fullScreen
         
         view.tintAdjustmentMode = .normal
+        
+        navigationController?.navigationBar.prefersLargeTitles = true
     }
     
     override open func viewWillAppear(_ animated: Bool) {
