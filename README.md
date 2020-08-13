@@ -2,7 +2,7 @@
 
 [![License: MIT](https://img.shields.io/badge/license-MIT-green.svg?style=flat)](https://github.com/Rahul-Mayani/RRSwiftListingWithoutStoryboard/blob/master/LICENSE)
 [![Platform](https://img.shields.io/cocoapods/p/PagingTableView.svg?style=flat)](https://github.com/Rahul-Mayani/RRSwiftListingWithoutStoryboard/tree/master/RRSwiftListingWithoutStoryboard/)
-[![Swift 5](https://img.shields.io/badge/Swift-5.1-orange.svg?style=flat)](https://developer.apple.com/swift/)
+[![Swift 5](https://img.shields.io/badge/Swift-5-orange.svg?style=flat)](https://developer.apple.com/swift/)
 
 Table view listing programmatically (without using storyboard or xib layout)
 
