@@ -44,7 +44,7 @@ class ListingVM {
 // MARK: - Sorting -
 extension ListingVM {
     public func sorting() {
-        UIAlertController.showBottomSheet(title: "Sort By:", message: "") { [weak self] (sort) in
+        UIAlertController.showBottomSheet(title: "", message: "Sort By:") { [weak self] (sort) in
             guard let self = self else { return }
             // MARK: data sorting handling
             let data = RRDataModel.sortBy(sort)

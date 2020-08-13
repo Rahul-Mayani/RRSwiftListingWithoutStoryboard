@@ -12,7 +12,7 @@ import UIKit
 
 private let vLoader = UIView()
 
-private let activityIndicatorView = NVActivityIndicatorView(frame: CGRect.init(0,0,50,50), type: .ballRotateChase, color: UIColor.blue, padding: CGFloat(0))
+private let activityIndicatorView = NVActivityIndicatorView(frame: CGRect.init(0,0,50,50), type: .ballRotateChase, color: UIColor.blueColor(), padding: CGFloat(0))
 //private let activityIndicatorView = UIActivityIndicatorView.init(style: .whiteLarge)
 
 struct RRLoader {
@@ -22,7 +22,7 @@ struct RRLoader {
         DispatchQueue.main.async {
             if isMask {
                 vLoader.frame = UIScreen.main.bounds
-                vLoader.backgroundColor = UIColor.black.withAlphaComponent(0.2)
+                vLoader.backgroundColor = UIColor.blackColor().withAlphaComponent(0.2)
                 appDelegate.window?.addSubview(vLoader)
             }
             

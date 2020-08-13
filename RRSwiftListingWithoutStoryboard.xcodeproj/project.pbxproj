@@ -53,6 +53,7 @@
 		EE7FEC0C24E4F1D100A7DBE0 /* ListingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE7FEC0824E4F1D100A7DBE0 /* ListingVC.swift */; };
 		EE7FEC0D24E4F1D100A7DBE0 /* DetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE7FEC0924E4F1D100A7DBE0 /* DetailsVC.swift */; };
 		EE7FEC0F24E4F1EA00A7DBE0 /* ListingVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE7FEC0E24E4F1EA00A7DBE0 /* ListingVM.swift */; };
+		EED2F41A24E548A80061DAB6 /* RRUIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED2F41924E548A80061DAB6 /* RRUIColor+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -113,6 +114,7 @@
 		EE7FEC0824E4F1D100A7DBE0 /* ListingVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListingVC.swift; sourceTree = "<group>"; };
 		EE7FEC0924E4F1D100A7DBE0 /* DetailsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailsVC.swift; sourceTree = "<group>"; };
 		EE7FEC0E24E4F1EA00A7DBE0 /* ListingVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingVM.swift; sourceTree = "<group>"; };
+		EED2F41924E548A80061DAB6 /* RRUIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RRUIColor+Extension.swift"; sourceTree = "<group>"; };
 		F48A481B430BB9ECCFB4277D /* Pods-RRSwiftListingWithoutStoryboard-RRSwiftListingWithoutStoryboardUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RRSwiftListingWithoutStoryboard-RRSwiftListingWithoutStoryboardUITests.debug.xcconfig"; path = "Target Support Files/Pods-RRSwiftListingWithoutStoryboard-RRSwiftListingWithoutStoryboardUITests/Pods-RRSwiftListingWithoutStoryboard-RRSwiftListingWithoutStoryboardUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -242,6 +244,7 @@
 				EE3E8CE924E29F64006330E4 /* RRUIImageView+Extension.swift */,
 				EE3E8CEB24E2A098006330E4 /* RRGeneral+Extensions.swift */,
 				EE3E8D0124E2B16D006330E4 /* RRUIAlertController+Extension.swift */,
+				EED2F41924E548A80061DAB6 /* RRUIColor+Extension.swift */,
 				EE3E8D0324E2B1C8006330E4 /* RRx+Extension.swift */,
 			);
 			path = Extensions;
@@ -531,6 +534,7 @@
 				EE3E8D0224E2B16D006330E4 /* RRUIAlertController+Extension.swift in Sources */,
 				EE3E8CF424E2A299006330E4 /* RRAPIManager.swift in Sources */,
 				EE7FEC0B24E4F1D100A7DBE0 /* BaseVC.swift in Sources */,
+				EED2F41A24E548A80061DAB6 /* RRUIColor+Extension.swift in Sources */,
 				EE3E8CF224E2A1BB006330E4 /* RRStructs.swift in Sources */,
 				EE3E8CF024E2A169006330E4 /* RRLoader.swift in Sources */,
 				EE3E8CEC24E2A098006330E4 /* RRGeneral+Extensions.swift in Sources */,

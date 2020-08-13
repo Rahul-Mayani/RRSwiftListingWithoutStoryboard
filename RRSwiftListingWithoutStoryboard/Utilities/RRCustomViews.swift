@@ -23,7 +23,7 @@ struct RRCustomViews {
     static func getScrollView() -> UIScrollView {
         let scrollView = UIScrollView()
         scrollView.translatesAutoresizingMaskIntoConstraints = false
-        scrollView.backgroundColor = UIColor.clear
+        scrollView.backgroundColor = UIColor.clearColor()
         return scrollView
     }
     

@@ -23,7 +23,7 @@ extension UIImageView {
             self.kf.indicatorType = .activity
             let indicator = self.kf.indicator?.view as? UIActivityIndicatorView
             //indicator?.style = .whiteLarge
-            indicator?.color = .blue
+            indicator?.color = UIColor.blueColor()
         }
         
         self.kf.setImage(

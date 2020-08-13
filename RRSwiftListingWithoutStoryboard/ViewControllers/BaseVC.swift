@@ -22,7 +22,7 @@ open class BaseVC: UIViewController {
     override open func viewDidLoad() {
         super.viewDidLoad()
                 
-        view.backgroundColor = UIColor.white
+        view.backgroundColor = UIColor.whiteColor()
                 
         setNeedsStatusBarAppearanceUpdate()
         

@@ -26,19 +26,21 @@ class ListingCell: UITableViewCell {
     }()
     
     let idLabel:UILabel = {
-        return RRCustomViews.getLabel(font: UIFont.systemFont(ofSize: 16, weight: .semibold), textColor: #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1))
+        let label = RRCustomViews.getLabel(font: UIFont.systemFont(ofSize: 16, weight: .semibold), textColor: UIColor.blackColor())
+        label.adjustsFontSizeToFitWidth = true
+        return label
     }()
     
     let dataLabel:UILabel = {
-        return RRCustomViews.getLabel(numberOfLines: 2, textColor: #colorLiteral(red: 0.2352941176, green: 0.1960784314, blue: 0.1568627451, alpha: 1))
+        return RRCustomViews.getLabel(numberOfLines: 2, textColor: UIColor.darkBlackColor())
     }()
     
     let dateLabel:UILabel = {
-        return RRCustomViews.getLabel(font: UIFont.systemFont(ofSize: 12, weight: .medium), textColor: #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1), textAlignment: .right)
+        return RRCustomViews.getLabel(font: UIFont.systemFont(ofSize: 12, weight: .medium), textColor: UIColor.lightBlackColor(), textAlignment: .right)
     }()
     
     let typeLabel:UILabel = {
-        return RRCustomViews.getLabel(font: UIFont.systemFont(ofSize: 15, weight: .semibold), textColor: #colorLiteral(red: 0.9254902005, green: 0.2352941185, blue: 0.1019607857, alpha: 1), textAlignment: .right)
+        return RRCustomViews.getLabel(font: UIFont.systemFont(ofSize: 15, weight: .semibold), textColor: UIColor.redColor(), textAlignment: .right)
     }()
     
     // merge id label and type label
