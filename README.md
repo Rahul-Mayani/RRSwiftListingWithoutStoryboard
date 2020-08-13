@@ -13,6 +13,7 @@ Table view listing programmatically (without using storyboard or xib layout)
 - Using **Snapkit** for set / update Auto Layout easy
 - Using **NVActivityIndicatorView** for showing progress while fetch data from the server
 - Unit Testing & UI Testing
+- Dark mode support
 - Universal interface support (iPhone & iPad)
 
 ## Requirements
