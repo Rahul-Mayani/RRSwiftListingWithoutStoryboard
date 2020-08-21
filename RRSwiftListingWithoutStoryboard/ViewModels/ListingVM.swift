@@ -18,11 +18,20 @@ class ListingVM {
     // listing data array observe by rxswift
     public var dataArray : PublishSubject<Results<RRDataModel>> = PublishSubject()
     
+    // get observe event while remove data from detailsVC
+    public var dataRemoved : PublishSubject<RRDataModel> = PublishSubject()
+    
     private let disposeBag = DisposeBag()
     
     // MARK: - Init -
     init() {
-        // do something
+        // data removed response handling by rxswift
+        dataRemoved.subscribe(onNext: { [weak self] (data) in
+            guard let self = self else { return }
+            UIAlertController.showAlert(title: "Removed: " + data.id, message: data.data)
+            RRDataModel.removeDataObject(data)
+            self.getDataFromLocalDBOrServer()
+        }).disposed(by: disposeBag)
     }
     
     // MARK: - other -

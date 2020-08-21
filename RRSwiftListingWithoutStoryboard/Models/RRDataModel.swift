@@ -52,4 +52,12 @@ extension RRDataModel {
         }
         return data
     }
+    
+    // removing single object data from local DB
+    class func removeDataObject(_ data: RRDataModel) {
+        // Delete all objects from the realm
+        appDelegate.realm.beginWrite()
+        appDelegate.realm.delete(data)
+        try! appDelegate.realm.commitWrite()
+    }
 }

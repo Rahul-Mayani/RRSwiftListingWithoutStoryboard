@@ -50,11 +50,23 @@ class DetailsVC: BaseVC {
         super.viewDidLoad()
         view.accessibilityIdentifier = RRViewController.Name.detailsVC
         setupUI()
+        
+        // add remove button in nav bar
+        let removeButton = UIBarButtonItem(title: "Remove", style: .plain, target: self, action: Selector(("removeButtonTapped")))
+        navigationItem.rightBarButtonItem  = removeButton
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         setupDataSource()
+    }
+    
+    // MARK: - Remove Button -
+    @objc func removeButtonTapped() {
+        // get listing VC from all navigation VC hierarchy
+        guard let listingVC = self.navigationController?.viewControllers[(self.navigationController?.viewControllers.count ?? 2) - 2] as? ListingVC else { return }
+        self.navigationController?.popViewController(animated: true)
+        listingVC.listingVM.dataRemoved.onNext(data!)
     }
 }
 

@@ -15,7 +15,7 @@ class ListingVC: BaseVC {
     private let dataTableView = UITableView()
     
     // interaction between view and model by listing view model
-    private let listingVM = ListingVM()
+    public let listingVM = ListingVM()
          
     // MARK: - View Life Cycle -
     override func viewDidLoad() {
