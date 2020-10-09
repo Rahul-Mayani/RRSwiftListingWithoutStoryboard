@@ -10,7 +10,7 @@ Table view listing programmatically (without using storyboard or xib layout)
 - Using **Realm** for local storage
 - Using **Alamofire** for API calling
 - Using **Kingfisher** for downloading and caching images from the web
-- Using **Snapkit** for set / update Auto Layout easy
+- Using **PureLayout** for set / update Auto Layout easy
 - Using **NVActivityIndicatorView** for showing progress while fetch data from the server
 - Unit Testing & UI Testing
 - Dark mode support
@@ -21,7 +21,7 @@ Table view listing programmatically (without using storyboard or xib layout)
 **Use of the following Cocoapods is required**: 
 
 - [Alamofire](https://github.com/Alamofire/Alamofire)
-- [Snapkit](https://github.com/SnapKit/SnapKit)
+- [PureLayout](https://github.com/SnapKit/PureLayout)
 - [RxSwift](https://github.com/ReactiveX/RxSwift)
 - [Kingfisher](https://github.com/onevcat/Kingfisher)
 - [NVActivityIndicatorView](https://github.com/ninjaprox/NVActivityIndicatorView)

@@ -7,7 +7,6 @@ target 'RRSwiftListingWithoutStoryboard' do
 
   # Pods for RRSwiftListingWithoutStoryboard
   pod 'Kingfisher'
-  pod 'SnapKit'
   pod 'NVActivityIndicatorView'
   pod 'RealmSwift'
   

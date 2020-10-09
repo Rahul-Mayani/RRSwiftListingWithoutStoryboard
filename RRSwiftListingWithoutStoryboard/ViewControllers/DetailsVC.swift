@@ -80,12 +80,6 @@ class DetailsVC: BaseVC {
     @objc func removeButtonTapped() {
         self.navigationController?.popViewController(animated: true)
         delegate?.getRemovedListingDataFromDetailsVC(data!)
-        /*
-        // get listing VC from all navigation VC hierarchy
-        guard let listingVC = self.navigationController?.viewControllers[(self.navigationController?.viewControllers.count ?? 2) - 2] as? ListingVC else { return }
-        self.navigationController?.popViewController(animated: true)
-        listingVC.listingVM.dataRemoved.onNext(data!)
-         */
     }
 }
 
@@ -96,14 +90,7 @@ extension DetailsVC {
         view.addSubview(dataScrollView)
         
         dataScrollView.autoPinEdgesToSuperviewMargins()
-        /*
-        dataScrollView.snp.makeConstraints { (make) -> Void in
-            make.top.equalTo(view).offset(20)
-            make.left.equalTo(view).offset(20)
-            make.trailing.equalTo(view).offset(-20)
-            make.bottom.equalTo(view).offset(-20)
-        }
-        */
+       
         // MARK: Main StackView
         dataScrollView.addSubview(mainStackView)
         
@@ -116,32 +103,13 @@ extension DetailsVC {
         
         // set imageview height
         dataImage.autoMatch(.height, to: .height, of: dataScrollView, withMultiplier: 0.35)
-        //dataImage.autoSetDimension(.height, toSize: 200)
-        /*dataImage.snp.makeConstraints { (make) -> Void in
-            make.height.equalTo(200)
-        }*/
         
         // set type label size
-        /*NSLayoutConstraint.autoSetPriority(UILayoutPriority(rawValue: 1005)) {
-            typeLabel.autoSetContentHuggingPriority(for: .horizontal)
-        }*/
         typeLabel.autoSetDimension(.height, toSize: 20)
-        //typeLabel.autoSetDimensions(to: CGSize(width: 80, height: 20))
-        /*typeLabel.snp.makeConstraints { (make) in
-            make.width.equalTo(80)
-            make.height.equalTo(20)
-        }*/
              
         // set main StackView Constraints
         mainStackView.autoPinEdgesToSuperviewMargins()
         mainStackView.autoMatch(.width, to: .width, of: dataScrollView, withOffset: -20)
-        /*mainStackView.snp.makeConstraints { (make) -> Void in
-            make.top.equalTo(dataScrollView).offset(20)
-            make.leading.equalTo(dataScrollView)
-            make.trailing.equalTo(dataScrollView)
-            make.bottom.equalTo(dataScrollView).offset(-20)
-            make.width.equalTo(dataScrollView.snp.width)
-        }*/
         
         // MARK: UI hiding
         dateLabel.isHidden = true

@@ -16,6 +16,7 @@ protocol RemovedListingData: class {
     func getRemovedListingDataFromDetailsVC(_ data: RRDataModel)
 }
 
+// get delegate event while remove data from detailsVC
 extension ListingVM: RemovedListingData {
     func getRemovedListingDataFromDetailsVC(_ data: RRDataModel) {
         self.removedDataFromDetailsVC(data)
@@ -35,13 +36,7 @@ class ListingVM {
     
     // MARK: - Init -
     init() {
-        // data removed response handling by rxswift
-        /*dataRemoved.subscribe(onNext: { [weak self] (data) in
-            guard let self = self else { return }
-            UIAlertController.showAlert(title: "Removed: " + data.id, message: data.data)
-            RRDataModel.removeDataObject(data)
-            self.getDataFromLocalDBOrServer()
-        }).disposed(by: disposeBag)*/
+        // code here...
     }
     
     // MARK: - other -

@@ -7,7 +7,6 @@
 //
 
 import UIKit
-//import SnapKit
 
 class ListingVC: BaseVC {
         
@@ -33,7 +32,7 @@ class ListingVC: BaseVC {
         listingVM.getDataFromLocalDBOrServer(true)
         
         // add sort button in nav bar
-        let sortButton = UIBarButtonItem(title: "Sort", style: .plain, target: self, action: Selector(("sortButtonTapped")))
+        let sortButton = UIBarButtonItem(title: "Sort", style: .plain, target: self, action: #selector(self.sortButtonTapped))
         navigationItem.rightBarButtonItem  = sortButton
         
         let vals = ["RR","RR","KK"]
@@ -64,15 +63,6 @@ extension ListingVC {
     // add / set tableview constraints and register cell
     private func addTableView() {
         view.addSubview(dataTableView)
-        /*
-        dataTableView.translatesAutoresizingMaskIntoConstraints = false
-        dataTableView.snp.makeConstraints { (make) -> Void in
-            make.top.equalTo(view)
-            make.left.equalTo(view)
-            make.bottom.equalTo(view)
-            make.right.equalTo(view)
-        }
-         */
         dataTableView.autoPinEdgesToSuperviewEdges()
         dataTableView.register(ListingCell.self, forCellReuseIdentifier: reuseIdentifierOfListingCell)
     }
