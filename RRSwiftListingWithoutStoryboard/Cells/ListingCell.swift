@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import RxSwift
 import RxCocoa
-import SnapKit
+//import SnapKit
 
 let reuseIdentifierOfListingCell = "ListingCell"
 
@@ -111,30 +111,42 @@ class ListingCell: UITableViewCell {
         mainStackView.addArrangedSubview(stackViewImageSpacer)
         mainStackView.addArrangedSubview(stackViewTextData)
         
-        dataImage.snp.makeConstraints { (make) -> Void in
+        dataImage.autoMatch(.width, to: .width, of: mainStackView, withMultiplier: 0.16)
+        /*dataImage.snp.makeConstraints { (make) -> Void in
             make.width.equalTo(60)
             //make.height.equalTo(10)
-        }
+        }*/
         
-        idLabel.snp.makeConstraints { (make) in
+        //idLabel.autoSetDimension(.height, toSize: 20)
+        /*idLabel.snp.makeConstraints { (make) in
             make.height.equalTo(20)
-        }
-        
-        typeLabel.snp.makeConstraints { (make) in
+        }*/
+       
+        typeLabel.autoSetDimension(.width, toSize: 80)
+        /*typeLabel.snp.makeConstraints { (make) in
             make.width.equalTo(80)
-        }
+        }*/
         
-        dataLabel.setContentHuggingPriority(UILayoutPriority.defaultHigh, for:.vertical)
+        /*
+        dateLabel.autoSetDimension(.height, toSize: 15)
+        NSLayoutConstraint.autoSetPriority(.defaultHigh) {
+            dateLabel.autoSetContentHuggingPriority(for: .vertical)
+        }*/
+        /*dataLabel.setContentHuggingPriority(UILayoutPriority.defaultHigh, for:.vertical)
         dateLabel.snp.makeConstraints { (make) in
             make.height.equalTo(15)
-        }
+        }*/
         
-        mainStackView.snp.makeConstraints { (make) -> Void in
+        mainStackView.autoPinEdgesToSuperviewMargins()
+        /*mainStackView.snp.makeConstraints { (make) -> Void in
             make.top.equalTo(contentView).offset(10)
             make.left.equalTo(contentView).offset(10)
             make.trailing.equalTo(contentView).offset(-10)
             make.bottom.equalTo(contentView).offset(-10)
-        }
+        }*/
+        
+        layoutSubviews()
+        layoutIfNeeded()
     }
     
     override func prepareForReuse() {

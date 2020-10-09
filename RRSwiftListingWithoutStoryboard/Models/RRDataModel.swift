@@ -15,6 +15,10 @@ class RRDataModel: Object {
     @objc dynamic var date: String = ""
     @objc dynamic var id: String = ""
     @objc dynamic var type: String = ""
+    
+    override class func primaryKey() -> String? {
+        return "id"
+    }
 }
 
 extension RRDataModel {
@@ -22,16 +26,16 @@ extension RRDataModel {
     class func create(from jsonResponse: [[String: Any]]) throws {
         do {
             // Delete all objects from the realm
-            try appDelegate.realm.write {
+            /*try appDelegate.realm.write {
                 appDelegate.realm.deleteAll()
-            }
+            }*/
             
             // Add new objects list in the realm
-            appDelegate.realm.beginWrite()
+            appDelegate.realm!.beginWrite()
             for json in jsonResponse {
-                appDelegate.realm.create(RRDataModel.self, value: json, update: .error)
+                appDelegate.realm!.create(RRDataModel.self, value: json, update: .modified)
             }
-            try appDelegate.realm.commitWrite()
+            try appDelegate.realm!.commitWrite()
            
         } catch { throw error }
     }
@@ -42,13 +46,13 @@ extension RRDataModel {
         // MARK: data sorting handling
         switch sort {
         case .all:
-            data = appDelegate.realm.objects(RRDataModel.self)
+            data = appDelegate.realm!.objects(RRDataModel.self)
         case .text:
-            data = appDelegate.realm.objects(RRDataModel.self).filter("type contains 'text'")
+            data = appDelegate.realm!.objects(RRDataModel.self).filter("type contains 'text'")
         case .image:
-            data = appDelegate.realm.objects(RRDataModel.self).filter("type contains 'image'")
+            data = appDelegate.realm!.objects(RRDataModel.self).filter("type contains 'image'")
         case .other:
-            data = appDelegate.realm.objects(RRDataModel.self).filter("type contains 'other'")
+            data = appDelegate.realm!.objects(RRDataModel.self).filter("type contains 'other'")
         }
         return data
     }
@@ -56,8 +60,12 @@ extension RRDataModel {
     // removing single object data from local DB
     class func removeDataObject(_ data: RRDataModel) {
         // Delete all objects from the realm
-        appDelegate.realm.beginWrite()
-        appDelegate.realm.delete(data)
-        try! appDelegate.realm.commitWrite()
+        appDelegate.realm!.beginWrite()
+        appDelegate.realm!.delete(data)
+        do {
+            try appDelegate.realm!.commitWrite()
+        } catch {
+            debugPrint(error.localizedDescription)
+        }
     }
 }

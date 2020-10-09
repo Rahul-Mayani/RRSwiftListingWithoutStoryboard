@@ -1,11 +1,24 @@
 PODS:
+  - Action (4.1.0):
+    - RxCocoa (~> 5.0)
+    - RxSwift (~> 5.0)
   - Alamofire (5.2.1)
   - Kingfisher (5.14.0):
     - Kingfisher/Core (= 5.14.0)
   - Kingfisher/Core (5.14.0)
+  - MagicalRecord (2.3.2):
+    - MagicalRecord/Core (= 2.3.2)
+  - MagicalRecord/Core (2.3.2)
+  - Moya (14.0.0):
+    - Moya/Core (= 14.0.0)
+  - Moya/Core (14.0.0):
+    - Alamofire (~> 5.0)
   - NVActivityIndicatorView (4.8.0):
     - NVActivityIndicatorView/Presenter (= 4.8.0)
   - NVActivityIndicatorView/Presenter (4.8.0)
+  - ObjectMapper (4.2.0)
+  - PureLayout (3.1.6)
+  - ReachabilitySwift (5.0.0)
   - Realm (5.3.3):
     - Realm/Headers (= 5.3.3)
   - Realm/Headers (5.3.3)
@@ -18,39 +31,61 @@ PODS:
     - RxSwift (~> 5)
   - RxSwift (5.1.1)
   - SnapKit (5.0.1)
+  - SwiftLint (0.40.3)
 
 DEPENDENCIES:
+  - Action
   - Alamofire
   - Kingfisher
+  - MagicalRecord
+  - Moya
   - NVActivityIndicatorView
+  - ObjectMapper
+  - PureLayout
+  - ReachabilitySwift
   - RealmSwift
   - RxCocoa
   - RxSwift
   - SnapKit
+  - SwiftLint
 
 SPEC REPOS:
   trunk:
+    - Action
     - Alamofire
     - Kingfisher
+    - MagicalRecord
+    - Moya
     - NVActivityIndicatorView
+    - ObjectMapper
+    - PureLayout
+    - ReachabilitySwift
     - Realm
     - RealmSwift
     - RxCocoa
     - RxRelay
     - RxSwift
     - SnapKit
+    - SwiftLint
 
 SPEC CHECKSUMS:
+  Action: 79e6c5dc91e13eea045ab6744b3e5609086671aa
   Alamofire: e911732990610fe89af59ac0077f923d72dc3dfd
   Kingfisher: 7b64389a43139c903ec434788344c288217c792d
+  MagicalRecord: 53bed74b4323b930992a725be713e53b37d19755
+  Moya: 5b45dacb75adb009f97fde91c204c1e565d31916
   NVActivityIndicatorView: d24b7ebcf80af5dcd994adb650e2b6c93379270f
+  ObjectMapper: 1eb41f610210777375fa806bf161dc39fb832b81
+  PureLayout: bd3c4ec3a3819ad387c99ebb72c6b129c3ed4d2d
+  ReachabilitySwift: 985039c6f7b23a1da463388634119492ff86c825
   Realm: 2d57ea355bf8ca2a0964d6bfb38d28d7ff2addf6
   RealmSwift: 0a709536ecea30eea1d3c514f6ade2ed078dee3c
   RxCocoa: 32065309a38d29b5b0db858819b5bf9ef038b601
   RxRelay: d77f7d771495f43c556cbc43eebd1bb54d01e8e9
   RxSwift: 81470a2074fa8780320ea5fe4102807cb7118178
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
+  SwiftLint: dfd554ff0dff17288ee574814ccdd5cea85d76f7
 
-PODFILE CHECKSUM: 324f6291d44a0d58464558f1b2601f2ba0ca8766
+PODFILE CHECKSUM: b26290ac345cbe347ac068040d2ffd08cde62986
 
 COCOAPODS: 1.9.3

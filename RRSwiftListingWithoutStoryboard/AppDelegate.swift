@@ -14,15 +14,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     
-    let realm = try! Realm()
+    var realm = try? Realm()
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         realmMigration()
+        realm = try! Realm()
+        
+        DependencyManager.shared.registerDefaults()
          
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.tintAdjustmentMode = .normal
-        window?.rootViewController = UINavigationController(rootViewController: ListingVC())
+        let navPage = NavigationPage(rootViewController: ListingVC())
+        navPage.statusBarStyle = .default
+        window?.rootViewController = navPage
         window?.makeKeyAndVisible()
         
         return true
@@ -46,6 +51,11 @@ extension AppDelegate {
                     // Nothing to do!
                     // Realm will automatically detect new properties and removed properties
                     // And will update the schema on disk automatically
+                    var nextID = 1
+                    migration.enumerateObjects(ofType: RRDataModel.className()) { oldObject, newObject in
+                        newObject!["id"] = "\(nextID)"
+                        nextID += 1
+                    }
                 }
             })
          

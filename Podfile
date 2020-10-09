@@ -6,13 +6,24 @@ target 'RRSwiftListingWithoutStoryboard' do
   use_frameworks!
 
   # Pods for RRSwiftListingWithoutStoryboard
-  pod 'RxCocoa'
-  pod 'RxSwift'
   pod 'Kingfisher'
-  pod 'Alamofire'
   pod 'SnapKit'
   pod 'NVActivityIndicatorView'
   pod 'RealmSwift'
+  
+  # MVVM classes dependency
+  pod 'Alamofire'
+  pod 'RxCocoa'
+  pod 'RxSwift'
+  pod 'Action'
+  pod 'ObjectMapper'
+  pod 'PureLayout'
+  pod 'Moya'
+  pod 'ReachabilitySwift'
+  pod 'MagicalRecord'
+
+  # Static analysis of the code
+  pod 'SwiftLint'
 
   target 'RRSwiftListingWithoutStoryboardTests' do
     inherit! :search_paths

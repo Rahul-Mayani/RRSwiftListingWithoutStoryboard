@@ -12,7 +12,7 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-open class BaseVC: UIViewController {
+open class BaseVC: BasePage {
     
     // MARK: - Variable -
     // ARC managment by rxswift (deinit)
@@ -30,7 +30,7 @@ open class BaseVC: UIViewController {
         
         view.tintAdjustmentMode = .normal
         
-        navigationController?.navigationBar.prefersLargeTitles = true
+        //navigationController?.navigationBar.prefersLargeTitles = true
     }
     
     override open func viewWillAppear(_ animated: Bool) {
@@ -44,5 +44,10 @@ open class BaseVC: UIViewController {
     override open func viewWillDisappear(_ animated: Bool) {
         view.endEditing(true)
         super.viewWillDisappear(animated)
+    }
+    
+    // MARK: - Memory Release -
+    deinit {
+        print("Memory Release : \(String(describing: self))\n" )
     }
 }

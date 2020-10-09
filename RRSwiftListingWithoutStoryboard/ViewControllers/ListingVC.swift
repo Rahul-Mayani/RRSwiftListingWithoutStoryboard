@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import SnapKit
+//import SnapKit
 
 class ListingVC: BaseVC {
         
@@ -35,10 +35,21 @@ class ListingVC: BaseVC {
         // add sort button in nav bar
         let sortButton = UIBarButtonItem(title: "Sort", style: .plain, target: self, action: Selector(("sortButtonTapped")))
         navigationItem.rightBarButtonItem  = sortButton
+        
+        let vals = ["RR","RR","KK"]
+        //let vals = [1, 4, 2, 2, 6, 24, 15, 2, 60, 15, 6,50,1]
+        let uniqueVals = vals.uniques
+        print(uniqueVals)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        enableNavigationBarLargeTitle.toggle()
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        enableNavigationBarLargeTitle.toggle()
     }
     
     // MARK: - Sort Button -
@@ -53,6 +64,7 @@ extension ListingVC {
     // add / set tableview constraints and register cell
     private func addTableView() {
         view.addSubview(dataTableView)
+        /*
         dataTableView.translatesAutoresizingMaskIntoConstraints = false
         dataTableView.snp.makeConstraints { (make) -> Void in
             make.top.equalTo(view)
@@ -60,6 +72,8 @@ extension ListingVC {
             make.bottom.equalTo(view)
             make.right.equalTo(view)
         }
+         */
+        dataTableView.autoPinEdgesToSuperviewEdges()
         dataTableView.register(ListingCell.self, forCellReuseIdentifier: reuseIdentifierOfListingCell)
     }
     
@@ -68,7 +82,7 @@ extension ListingVC {
         listingVM.dataArray.bind(to: dataTableView.rx.items(cellIdentifier: reuseIdentifierOfListingCell, cellType: ListingCell.self))
         {  (row, data, cell) in
             cell.data = data
-        }.disposed(by: rxbag)
+        } => rxbag
     }
     
     // tableview cell row selection performing by rxswift
@@ -80,7 +94,10 @@ extension ListingVC {
                 let detailVC = DetailsVC()
                 detailVC.data = data
                 detailVC.title = data.id
-                self.navigationController?.pushViewController(detailVC, animated: true)
-        }).disposed(by: rxbag)
+                detailVC.delegate = self.listingVM
+                //self.navigationController?.pushViewController(detailVC, animated: true)
+                let animator = FlipAnimator(withDuration: TimeInterval(0.3))
+                self.navigationService.push(to: detailVC, options: .push(with: animator))
+        }) => rxbag
     }
 }

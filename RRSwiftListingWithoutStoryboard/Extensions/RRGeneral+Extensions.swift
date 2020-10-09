@@ -9,6 +9,20 @@
 import Foundation
 import UIKit
 
+extension Array where Element: Equatable {
+    var uniques: Array {
+        //var buffer = Array()
+        var added = Array<Element>()
+        for elem in self {
+            if !added.contains(elem) {
+                //buffer.append(elem)
+                added.append(elem)
+            }
+        }
+        return added//buffer
+    }
+}
+
 extension String {
     
     func isValidURL() -> Bool {
